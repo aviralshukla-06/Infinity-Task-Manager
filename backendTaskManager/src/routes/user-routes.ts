@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import { Request, Response } from "express";
-import express, { Router, json } from "express"
+import { Router } from "express"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import { z } from "zod"
@@ -86,7 +86,8 @@ userRouter.post("/login", async (req: Request, res: Response): Promise<void> => 
         const token = jwt.sign({
             id: signingUser._id
         }, jwtSecret);
-        res.json({
+        res.status(200).json({
+            message: "You have successfully logged-in",
             token: token
         });
     } else {
@@ -95,11 +96,6 @@ userRouter.post("/login", async (req: Request, res: Response): Promise<void> => 
         });
         return
     }
-
-
-    res.json({
-        message: "You have successfully logged-in"
-    });
 
 })
 

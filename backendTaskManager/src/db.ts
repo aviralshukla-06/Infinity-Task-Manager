@@ -63,7 +63,7 @@ const taskSchema = new Schema<taskInterface>({
         type: Schema.Types.ObjectId,
         ref: "users",
         required: true,
-        unique: true
+
     },
     taskTitle: {
         type: String,

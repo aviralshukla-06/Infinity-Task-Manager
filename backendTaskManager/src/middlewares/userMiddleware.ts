@@ -16,17 +16,18 @@ export const userMiddleware = (
     next: NextFunction
 ): void => {
     const authHeader = req.headers.authorization;
-    const token = authHeader?.split(" ")[1]; // Extract Bearer token
+    // const token = authHeader?.split(" ")[1]; // Extract Bearer token
 
-    if (!token) {
+    if (!authHeader) {
         res.status(401).json({ message: "Token missing" });
         return;
     }
 
     try {
-        const decoded = jwt.verify(token, secret) as JwtPayload;
-        if (decoded.id) {
-            req.userId = decoded.id as string;
+        const decoded = jwt.verify(authHeader, secret) as JwtPayload;
+        const userId = (decoded.id || decoded._id) as string;
+        if (userId) {
+            req.userId = userId
             next();
         } else {
             res.status(401).json({ message: "Invalid token payload" });
