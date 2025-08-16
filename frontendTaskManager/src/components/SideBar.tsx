@@ -4,50 +4,66 @@ import { DashboardIcon } from "../icons/DashboardIcon"
 import { DueTaskIcon } from "../icons/DueTaskIcon"
 import { LogoutIcon } from "../icons/LogoutIcon"
 import { PendingIcon } from "../icons/PendingIcon"
+import { PlusIcon } from "../icons/PlusIcon"
 import { Button } from "./Button"
 
-export const SideBar = () => {
+
+type SideBarProps = {
+    onAddTask: () => void;
+};
+
+export const SideBar = ({ onAddTask }: SideBarProps) => {
     return (
-        <div className="h-screen w-[18%] mt-2 shadow-lg bg-[#ff6867] rounded-md">
+        <div className="h-screen w-full shadow-lg bg-[#ff6867] rounded-md">
             <div className=" h-[80%]">
-                <div className="flex p-4">
+
+                <div className="flex p-3">
+                    <Button
+                        icon={<PlusIcon size="lg" />}
+                        text="Add Task"
+                        onClick={onAddTask}
+                    />
+
+                </div>
+
+                <div className="flex p-3">
                     <Button
                         icon={<DashboardIcon size="lg" />}
                         text="Home"
                     />
-                    {/* <DashboardIcon size="md" /> */}
+
                 </div>
-                <div className="flex p-4">
+                <div className="flex p-3">
                     <Button
                         icon={<CheckIcon size="lg" />}
                         text="Finished"
                     />
-                    {/* <DashboardIcon size="md" /> */}
+
                 </div>
-                <div className="flex p-4">
+                <div className="flex p-3">
                     <Button
                         icon={<PendingIcon size="lg" />}
                         text="Upcoming"
                     />
-                    {/* <DashboardIcon size="md" /> */}
+
                 </div>
-                <div className="flex p-4">
+                <div className="flex p-3">
                     <Button
                         icon={<DueTaskIcon size="lg" />}
                         text="Missed"
                     />
-                    {/* <DashboardIcon size="md" /> */}
+
                 </div>
-                <div className="flex p-4">
+                <div className="flex p-3">
                     <Button
                         icon={<CalanderIcon size="lg" />}
                         text="Today's Task"
                     />
-                    {/* <DashboardIcon size="md" /> */}
+
                 </div>
 
             </div>
-            <div className="flex p-4">
+            <div className="flex p-3">
                 <Button
                     icon={<LogoutIcon size="lg" />}
                     text="Logout"

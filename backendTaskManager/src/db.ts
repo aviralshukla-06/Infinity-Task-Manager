@@ -71,11 +71,12 @@ const taskSchema = new Schema<taskInterface>({
     },
     taskDescription: {
         type: String,
-        required: true
+        required: true,
+        maxlength: 234
     },
     taskStatus: {
         type: Boolean,
-        required: true
+        default: false,
     },
     taskCreatedAt: {
         type: Date,

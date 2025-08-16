@@ -21,12 +21,18 @@ taskRouter.post("/addtasks", userMiddleware, async (req: AuthRequest, res: Respo
             return
         }
 
+        if (taskDescription.length > 234) {
+            res.status(400).json({ message: "Task description cannot exceed 234 characters" });
+            return;
+        }
+
         const newTask = await Task.create({
             userId: req.userId,
             taskTitle,
             taskDescription,
             taskStatus
         })
+
 
         res.status(201).json({
             message: "Task added to the list",
@@ -57,9 +63,9 @@ taskRouter.get("/viewtasks", userMiddleware, async (req: AuthRequest, res: Respo
         })
 
         if (responseTasks) {
-            res.status(200).json({
-                tasks: responseTasks || []
-            })
+            res.status(200).json(
+                responseTasks || []
+            )
         }
         console.log(responseTasks);
     } catch (error) {
@@ -80,7 +86,7 @@ taskRouter.put("/updatetasks", userMiddleware, async (req: AuthRequest, res: Res
             return;
         }
 
-        const { taskTitle, taskDescription, taskStatus, contentId } = req.body;
+        const { taskTitle, taskDescription, contentId } = req.body;
 
         const updatedTask = await Task.updateOne({
 
@@ -91,7 +97,6 @@ taskRouter.put("/updatetasks", userMiddleware, async (req: AuthRequest, res: Res
             $set: {
                 taskTitle,
                 taskDescription,
-                taskStatus
             }
         })
 
@@ -150,5 +155,42 @@ taskRouter.delete("/deletetasks", userMiddleware, async (req: AuthRequest, res: 
 });
 
 
+
+// updateStatus of task 
+
+taskRouter.put("/updatetaskStatus", userMiddleware, async (req: AuthRequest, res: Response): Promise<void> => {
+
+    try {
+        if (!req.userId) {
+            res.status(401).json({ message: "Unauthorized" });
+            return;
+        }
+
+        const { taskStatus, contentId } = req.body;
+
+        const updatedTask = await Task.updateOne({
+
+            _id: contentId,
+            userId: req.userId,
+        }, {
+
+            $set: {
+                taskStatus
+            }
+        })
+
+        res.status(200).json({
+            message: "Task Status updated successfully",
+            updatedTask
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed updating task",
+            error
+        })
+    }
+
+
+})
 
 export default taskRouter;

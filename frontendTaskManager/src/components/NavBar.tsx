@@ -1,7 +1,4 @@
-interface navBarInterface {
-    day: string,
-    date: Date
-}
+
 
 export const NavBar = () => {
 
@@ -11,10 +8,10 @@ export const NavBar = () => {
     console.log(dayName); // e.g. "Friday"
 
     return (
-        <div className="flex h-12 bg-white shadow-2xl border">
-            <div className="font-bold text-2xl pl-12 flex items-center ">
+        <div className="flex h-12 bg-white w-[80%] justify-end shadow-2xl border">
+            {/* <div className="font-bold text-2xl pl-12 flex items-center ">
                 TASK MANAGER
-            </div>
+            </div> */}
             <div className="ml-auto text-right pr-12 leading-5 ">
                 <div>
                     <div className="font-semibold text-xl">

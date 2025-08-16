@@ -4,7 +4,7 @@ export type Size = "sm" | "md" | "lg";
 export interface SizeStyles {
     size: Size,
     open?: boolean
-    contentId?: number;
+    contentId?: string;
     onClose?: () => void;
     onClick?: () => void;
 }

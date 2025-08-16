@@ -1,19 +1,22 @@
-import { Card } from "./components/Card"
-import { NavBar } from "./components/NavBar"
-import { SideBar } from "./components/SideBar"
-// import { LogoutIcon } from "./icons/LogoutIcon"
+
+import Dashboard from './pages/Dashboard'
+import { Login } from './pages/Login'
+import { SignUp } from './pages/SignUp'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+
 function App() {
-
-
   return (
-    <>
-      <NavBar />
-      <div className='bg-white flex flex-wrap'>
-        <SideBar />
-        <Card id={123} title="Trial" date={new Date} status={false} description="Hey There how are you all" />
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<SignUp />} />
+        <Route path='/register' element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   )
+
 }
 
 export default App
