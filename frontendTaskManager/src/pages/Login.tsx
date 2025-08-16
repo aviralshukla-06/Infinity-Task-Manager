@@ -8,7 +8,7 @@ import { UserIcon } from "../icons/UserIcon"
 import { BACKEND_URL } from "../config"
 import axios from "axios"
 import { AuthSideBar } from "../components/AuthSideBar"
-import { SignUp } from "./SignUp"
+
 
 export const Login = () => {
     const emailRef = useRef<HTMLInputElement>(null);

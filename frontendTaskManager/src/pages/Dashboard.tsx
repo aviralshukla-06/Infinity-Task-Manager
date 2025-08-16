@@ -8,7 +8,7 @@ import { SideBar } from '../components/SideBar';
 import { BACKEND_URL } from '../config';
 import { EditContent } from '../components/EditContent';
 import { TopBar } from '../components/TopBar';
-import { UserIcon } from '../icons/UserIcon';
+// import { UserIcon } from '../icons/UserIcon';
 
 
 type Content = {
@@ -82,7 +82,7 @@ export function Dashboard() {
                     <div className='w-full'>
 
                         <div className='w-full'>
-                            <TopBar icon={<UserIcon size='lg' />} />
+                            <TopBar />
                         </div>
 
                         <div className='flex flex-wrap gap-6 pl-[6%]'>

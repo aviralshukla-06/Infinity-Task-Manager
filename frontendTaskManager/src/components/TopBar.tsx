@@ -1,12 +1,12 @@
-import type { ReactElement } from "react"
+// import type { ReactElement } from "react"
 
-interface topbarProps {
-    icon?: ReactElement
-    heading?: string,
-    time?: Date
-}
+// interface topbarProps {
+//     icon?: ReactElement
+//     heading?: string,
+//     time?: Date
+// }
 
-export const TopBar = (props: topbarProps) => {
+export const TopBar = () => {
     const date = new Date(); // current date
     const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
 
