@@ -2,6 +2,8 @@
 import { sizeClasses, type SizeStyles } from "./IconSize";
 
 export const LogoutIcon = ({ size }: SizeStyles) => {
+
+
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

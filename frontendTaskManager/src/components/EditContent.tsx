@@ -42,13 +42,13 @@ export function EditContent({ open, onClose, initialData }) {
                         <CrossIcon size="md" />
                     </div>
 
-                    <div className="flex flex-col items-center justify-start gap-3 py-4">
+                    <div className="flex flex-col items-center justify-start gap-3 py-3">
                         <Input ref={titleRef} placeholder="Title" className="w-64" />
-                        <Input ref={descriptionRef} placeholder="Description" className="w-64" />
+                        <Input ref={descriptionRef} placeholder="Description" className="w-64 h-44 overflow-y-auto text-left align-top" />
                     </div>
 
                     <div className="flex justify-center mt-8">
-                        <button onClick={editContent} className="flex items-center justify-center w-[80%] px-4 py-2 text-white bg-blue-500 rounded">
+                        <button onClick={editContent} className="flex items-center justify-center w-[88%] px-4 py-2 text-white bg-blue-500 rounded">
                             Submit
                         </button>
                     </div>

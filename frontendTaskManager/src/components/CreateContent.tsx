@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { BACKEND_URL } from "../config";
 import axios from "axios";
 
+
 export function CreateContent({ open, onClose }) {
 
     const taskTitleRef = useRef<HTMLInputElement>(null);

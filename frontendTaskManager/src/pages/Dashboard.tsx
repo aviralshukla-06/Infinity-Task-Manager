@@ -7,6 +7,9 @@ import { SideBar } from '../components/SideBar';
 // import { PlusIcon } from '../icons/PlusIcon';
 import { BACKEND_URL } from '../config';
 import { EditContent } from '../components/EditContent';
+import { TopBar } from '../components/TopBar';
+import { UserIcon } from '../icons/UserIcon';
+
 
 type Content = {
     _id: string,
@@ -68,37 +71,44 @@ export function Dashboard() {
             <EditContent open={editModalOpen} onClose={() => setEditModalOpen(false)} initialData={selectedContent} />
             <div className='h-auto w-full flex'>
 
-                <div className='w-[20%] fixed top-0 left-0 h-screen border border-black'>
-                    <div className='w-full  border border-black mr-1 flex'>
+                <div className='w-[20%] fixed top-0 left-0 h-screen '>
+                    <div className='w-full  mr-1 flex'>
                         <SideBar onAddTask={() => setModalOpen(true)} />
                     </div>
                 </div>
 
 
-                <div className='flex flex-wrap gap-6 border border-black  justify-start w-[78%] ml-[21%] pl-[4%]'>
+                <div className=' justify-start w-[80%] ml-[20%]'>
+                    <div className='w-full'>
 
-
-                    {contents.length === 0 ? (
-                        <div className="text-black font-extrabold text-lg mt-10 ml-4">
-                            Please add some data
+                        <div className='w-full'>
+                            <TopBar icon={<UserIcon size='lg' />} />
                         </div>
 
-                    ) :
-                        (contents.map(({ _id, taskTitle, taskStatus, taskDescription, creationdate }, idx) => (
-                            <Card
-                                key={_id || idx}
-                                _id={_id}
-                                title={taskTitle}
-                                status={taskStatus}
-                                description={taskDescription}
-                                date={creationdate || new Date()}
-                                onEdit={() => {
-                                    setSelectedContent({ _id, taskTitle, taskDescription });
-                                    setEditModalOpen(true);
-                                }}
-                            />
+                        <div className='flex flex-wrap gap-6 pl-[6%]'>
+                            {contents.length === 0 ? (
+                                <div className="text-black font-extrabold text-lg mt-10 ml-4">
+                                    Please add some data
+                                </div>
 
-                        )))}
+                            ) :
+                                (contents.map(({ _id, taskTitle, taskStatus, taskDescription, creationdate }, idx) => (
+                                    <Card
+                                        key={_id || idx}
+                                        _id={_id}
+                                        title={taskTitle}
+                                        status={taskStatus}
+                                        description={taskDescription}
+                                        date={creationdate || new Date()}
+                                        onEdit={() => {
+                                            setSelectedContent({ _id, taskTitle, taskDescription });
+                                            setEditModalOpen(true);
+                                        }}
+                                    />
+
+                                )))}
+                        </div>
+                    </div>
                 </div>
 
             </div>

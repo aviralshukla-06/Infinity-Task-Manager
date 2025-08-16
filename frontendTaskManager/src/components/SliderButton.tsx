@@ -16,7 +16,7 @@ export default function SliderButton({ contentId }: { contentId: string }) {
 
 
             try {
-                await axios.put(`${BACKEND_URL}/tasks/updatetaskStatus`, {
+                await axios.put(`${BACKEND_URL}/api/tasks/updatetaskStatus`, {
                     taskStatus: status,
                     contentId: contentId
                 },
