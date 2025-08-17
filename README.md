@@ -84,7 +84,7 @@ Make sure your MongoDB URI is correctly set (can be local or cloud URI).
 node dist/index.js
 ```
 
-The backend server will run on `http://localhost:5000` by default.
+The backend server will run on `http://localhost:3000` by default.
 
 ***
 
@@ -110,13 +110,13 @@ npm install
 npm run dev
 ```
 
-The frontend React app will run on `http://localhost:3000` by default.
+The frontend React app will run on `http://localhost:5173` by default.
 
 ***
 
 ## Usage
 
-- Open your browser and navigate to `http://localhost:3000`.
+- Open your browser and navigate to `http://localhost:5173`.
 - You can now create, view, update, and delete tasks.
 - The frontend communicates with the backend API to manage tasks persistently.
 - All CRUD operations are supported via the intuitive UI.
@@ -126,16 +126,14 @@ The frontend React app will run on `http://localhost:3000` by default.
 ## Project Structure
 
 ### Backend (`backendTaskManager`)
-- `server.js` - Main backend application entry point.
-- `routes/taskRoutes.js` - Routes defining API endpoints for tasks.
-- `controllers/taskController.js` - Business logic and controller functions for task operations.
-- `models/` - Contains Mongoose schemas/models for task data.
+- `index` - Main backend application entry point.
+- `api/tasks` - Routes defining API endpoints for tasks.
+- `db/` - Contains Mongoose schemas/models for task data.
 - `.env` - Environment variables for configuration.
 
 ### Frontend (`frontendTask`)
 - `src/` - React source files including components, pages, and services.
-- `App.js` - Main React component with routing and layout.
-- `.env` - Environment variables (if applicable).
+- `App.jsx` - Main React component with routing and layout.
 
 ***
 
