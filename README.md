@@ -1,6 +1,20 @@
 # Infinity-Task-Manager
 An assignment project
 
+### Live link
+[1] https://task-manager-frontend-murex-five.vercel.app/
+
+### Link for guidance to create cluster and collection in mongodb:
+[1] https://www.youtube.com/watch?v=RwkLddYwU8c
+
+- Create a database (any name) with two collections
+- users
+- tasks
+- It should look like the following way as shown in image
+
+<img width="393" height="173" alt="image" src="https://github.com/user-attachments/assets/7edf333a-2706-4a2c-9097-d41c49f2fbf5" />
+
+
 ## Overview
 Infinity Task Manager is a full-stack task management application designed to help users efficiently create, view, edit, and delete tasks. The project includes a backend API and a frontend interface, enabling seamless task management on any machine. It provides a clean, user-friendly experience for managing daily tasks, deadlines, and statuses.
 
