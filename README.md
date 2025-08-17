@@ -71,16 +71,18 @@ cd Infinity-Task-Manager
 cd backendTaskManager
 ```
 
-Make a change in `tsconfig.json` search for the keys and set values as given below:
-```bash
-"rootDir": "./src",
-"outDir": "./dist",
-```
+
 
 2. Install dependencies:
 
 ```bash
 npm install
+```
+
+Make a change in `tsconfig.json` search for the keys and set values as given below:
+```bash
+"rootDir": "./src",
+"outDir": "./dist",
 ```
 
 3. Create a `.env` file in the `backendTaskManager` folder based on `.env.example` and configure your environment variables:
@@ -192,15 +194,3 @@ For any questions or suggestions, please open an issue on the GitHub repo.
 
 Now you have a robust task manager application ready to install and run on any machine with Node.js and MongoDB installed. Enjoy managing your tasks seamlessly with Infinity Task Manager!
 
-[1] https://github.com/aviralshukla-06/Infinity-Task-Manager/tree/main/backendTaskManager
-[2] https://github.com/aviralshukla-06/Infinity-Task-Manager/tree/main/frontendTask
-[3] https://github.com/Uvishwanth/task-management-app/blob/main/readme.md
-[4] https://www.linkedin.com/posts/leonmotaung_so-i-have-built-this-task-manager-backend-activity-7265820558573867010-wih7
-[5] https://github.com/HimanshuSinghBhandari/Task_Management
-[6] https://github.com/pras75299/taskmanager-backend
-[7] https://www.linkedin.com/posts/ashwani-kumar-16a064170_github-ashu2764taskmanagerapi-this-is-activity-7229971834111188993-j3yM
-[8] https://www.linkedin.com/posts/sharvil-amburle_github-sharvil31task-manager-responsive-activity-7267780149310349312-HECb
-[9] https://www.linkedin.com/posts/muhammadharoon26_github-muhammadharoon26task-manager-api-activity-7290702602026033152-9tMU
-[10] https://github.com/nithins1/task-manager
-[11] https://github.com/sahilkhatiwada/Task-Manager-Backend
-[12] https://dev.to/taskinfinity
