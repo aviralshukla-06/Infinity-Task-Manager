@@ -15,7 +15,7 @@ type Content = {
     _id: string,
     taskTitle: string,
     taskDescription: string,
-    taskStatus?: Boolean,
+    taskStatus?: boolean,
     user_id?: number,
     creationdate?: Date
 }

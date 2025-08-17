@@ -52,7 +52,7 @@ export function CreateContent({ open, onClose }) {
                         <div className="flex flex-col items-center justify-start gap-4 ">
                             <Input ref={taskTitleRef} placeholder="Title" className="w-64 text-center " />
                             {/* <Input ref={taskStatusRef} placeholder="status" className="w-64" /> */}
-                            <Input ref={taskDescriptionRef} placeholder="Description" className="w-64 h-44 overflow-y-auto text-left align-top" />
+                            <InputArea ref={taskDescriptionRef} placeholder="Description" className="w-64 h-44 " />
                         </div>
                         <div className="flex justify-center mt-4">
                             <button onClick={addTasks} className="flex items-center justify-center w-[88%] px-4 py-2 text-white bg-blue-500 rounded">
@@ -76,6 +76,16 @@ interface inputProp {
     onChange?: () => void
     className?: string
 }
+
+function InputArea({ onChange, placeholder, ref, className }: inputProp) {
+    return (
+        <div>
+            <textarea ref={ref} placeholder={placeholder} className={`${className} px-4 py-2 block text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 pointer-events-auto dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`} onChange={onChange}></textarea>
+
+        </div>
+    )
+}
+
 
 function Input({ onChange, placeholder, ref, className }: inputProp) {
     return <div>

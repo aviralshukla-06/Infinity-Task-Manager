@@ -32,12 +32,12 @@ export const Login = () => {
             console.log(jwt);
             localStorage.setItem("token", jwt);
             nav("/dashboard");
+            alert("signind -in")
         } catch (error) {
             alert("failed" + error)
         }
 
 
-        alert("signind -in")
     }
 
 
@@ -46,7 +46,6 @@ export const Login = () => {
         <div className="flex h-screen">
             <div className="h-screen w-1/2 flex items-center bg-[#A7F3D0]">
                 <div className="h-full w-full  flex flex-col rounded-md items-center justify-center font-sans bg-blue-500 custom-diagonal-bg p-4">
-
                     {/* Header */}
                     <CardHeader
                         profileIcon={<UserIcon size="lg" />}
@@ -88,3 +87,11 @@ export const Login = () => {
 
     )
 }
+
+
+
+
+
+
+
+//   

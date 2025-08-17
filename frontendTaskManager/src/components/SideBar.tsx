@@ -10,12 +10,16 @@ import { useNavigate } from "react-router-dom"
 
 
 type SideBarProps = {
-    onAddTask: () => void;
+    onAddTask?: () => void;
+    onClick?: () => void;
+    filter?: boolean
+    className?: string
 };
 
 export const SideBar = ({ onAddTask }: SideBarProps) => {
 
     const navigateTo = useNavigate()
+
 
     async function logout() {
         await localStorage.removeItem("token")
@@ -49,6 +53,11 @@ export const SideBar = ({ onAddTask }: SideBarProps) => {
                     <Button
                         icon={<CheckIcon size="lg" />}
                         text="Finished"
+                        onClick={() => {
+                            if (filter == true) {
+                                return
+                            }
+                        }}
                     />
 
                 </div>
@@ -56,10 +65,15 @@ export const SideBar = ({ onAddTask }: SideBarProps) => {
                     <Button
                         icon={<PendingIcon size="lg" />}
                         text="Upcoming"
+                        onClick={() => {
+                            if (filter == false) {
+                                return
+                            }
+                        }}
                     />
 
-                </div>
-                <div className="flex p-3">
+                </div> */}
+                {/*<div className="flex p-3">
                     <Button
                         icon={<DueTaskIcon size="lg" />}
                         text="Missed"
