@@ -25,7 +25,7 @@ An assignment project
 docker pull aviralshukla06/infinity-task-backend:latest
 docker pull aviralshukla06/infinity-task-frontend:latest
 ```
-- See the images in ypur system:
+- See the images in your system:
 ``` bash
 docker images
 ```
@@ -33,6 +33,12 @@ docker images
 ``` bash
 docker run -p 3000:3000 -e MONGO_URL="your-mongoDb-connection-string/url" -e JWT_SECRET="secret-thet-you-wish" aviralshukla06/infinity-task-backend:latest
 ```
+
+## Note: 
+- Your mongoDb connection string must have your database-name at the end the following way:
+-MONGO_URL="connection-string/database-name(here -> Infinity-Task-Manager)"
+- As in my case i have database-name - Infinity-Task-Manager
+  
 - This will expose the backend API on http://localhost:3000
 - Follow the commands to run frontend image:
 ``` bash
