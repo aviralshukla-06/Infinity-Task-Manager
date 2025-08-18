@@ -14,6 +14,34 @@ An assignment project
 
 <img width="393" height="173" alt="image" src="https://github.com/user-attachments/assets/7edf333a-2706-4a2c-9097-d41c49f2fbf5" />
 
+## Run with Docker
+### Requirements:
+- Docker Desktop installed
+- MongoDb working url as directed in above section
+
+## Steps:
+### Download images from Docker hub with following commands :
+``` bash
+docker pull aviralshukla06/infinity-task-backend:latest
+docker pull aviralshukla06/infinity-task-frontend:latest
+```
+- See the images in ypur system:
+``` bash
+docker images
+```
+- Follow the commands to run backend image:
+``` bash
+docker run -p 3000:3000 -e MONGO_URL="your-mongoDb-connection-string/url" -e JWT_SECRET="secret-thet-you-wish" aviralshukla06/infinity-task-backend:latest
+```
+- This will expose the backend API on http://localhost:3000
+- Follow the commands to run frontend image:
+``` bash
+docker run -p 5173:5173 aviralshukla06/infinity-task-frontend:latest
+```
+### Now open your browser and go to:
+``` bash
+http://localhost:5173/
+```
 
 ## Overview
 Infinity Task Manager is a full-stack task management application designed to help users efficiently create, view, edit, and delete tasks. The project includes a backend API and a frontend interface, enabling seamless task management on any machine. It provides a clean, user-friendly experience for managing daily tasks, deadlines, and statuses.
